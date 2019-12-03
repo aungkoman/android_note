@@ -1,0 +1,12 @@
+android package name ပြောင်းလဲခြင်း
+
+
+ဒီနေရာ က အဖြေတွေ ဖတ်ကြည့်ရန်။
+https://stackoverflow.com/questions/16804093/rename-package-in-android-studio
+
+
+1. ဘယ်ဘက်ခြမ်းက Gear Icon ကို နှိပ်ပြီး Uncheck / De-select the Compact Empty Middle Packages option
+2. Project Folder တွေ တစ်ခုချင်းစီ ကွဲသွားတဲ့အခါ ကိုယ်ပြင်ချင်တဲ့ package name ကို refactor->rename လုပ်။ ထပ်မေးလာရင် package ပါ ပြောင်းပါမယ်ဆိုပြီး ရွေးပေး။
+3. Gradle File တွေကတော့ အလိုအလျောက် ပြောင်းသွားလိမ့်မယ်၊ မပြောင်းရင်တော့ manual လိုက်ပြောင်းပေး။
+4. Manifest က package = "" မှာတော့ manual သွားပြင်ပေးရမယ်။
+5. Clean Rebuild လုပ်လိုက်ရင် ရပြီ။

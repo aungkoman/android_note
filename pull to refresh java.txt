@@ -1,0 +1,40 @@
+pull to refresh
+
+
+
+1. layout file အရင် ပြင်ထားပေးရမယ်။
+	ကိုယ်တွေက androidX သုံးတာဆိုတော့ကာ အောက်က xml ကို သုံးရမယ်။ tutorial တွေထဲမှာက android support libarary ပဲ သုံးကြတာ။
+	ဒီမှာ single child view ပဲ လက်ခံတယ်။ အခု case မှာတော့ list view တစ်ခု ထည့်ထားတယ်။ 
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pullToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+	
+	
+
+/*
+ * Sets up a SwipeRefreshLayout.OnRefreshListener that is invoked when the user
+ * performs a swipe-to-refresh gesture.
+ */
+mySwipeRefreshLayout.setOnRefreshListener(
+    new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            Log.i(LOG_TAG, "onRefresh called from SwipeRefreshLayout");
+
+            // This method performs the actual data-refresh operation.
+            // The method calls setRefreshing(false) when it's finished.
+            myUpdateOperation();
+        }
+    }
+);
+			
+// Signal SwipeRefreshLayout to start the progress indicator
+mySwipeRefreshLayout.setRefreshing(true);

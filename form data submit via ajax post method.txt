@@ -1,0 +1,28 @@
+
+// A $( document ).ready() block.
+$( document ).ready(function() {
+    console.log( "ready!" );
+    $( "#investigation_form" ).submit(function( event ) {
+        console.log( "Handler for investigation_form  .submit() called." );
+        event.preventDefault();
+        var url = "lab_server.php";
+        var formData = new FormData(this);
+        console.log("formData is "+JSON.stringify(formData));
+          $.ajax({
+                type: "POST",
+                url: url,
+                data: formData,
+                processData: false, // for form data processing
+                contentType: false,// for form data processing
+                success: function(data)
+                {
+                    console.log("data is "+data); 
+                },
+                error:function(err){
+                  alert("err "+err);
+                }
+              });
+
+              
+    });
+});
